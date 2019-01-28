@@ -993,6 +993,7 @@ extension MMNavigator where T == FxUserState {
     // Opens a URL in a new tab.
     func openNewURL(urlString: String) {
         let app = XCUIApplication()
+        self.nowAt(BrowserTab)
         if isTablet {
             waitForExistence(app.buttons["TopTabsViewController.tabsButton"], timeout: 15)
         } else {

@@ -108,6 +108,9 @@ class ThirdPartySearchTest: BaseTestCase {
 
         // Go to settings and set MDN as the default
         waitUntilPageLoad()
+        waitForTabsButton()
+        navigator.goto(BrowserTabMenu)
+        waitForExistence(app.tables.cells["menu-Settings"], timeout: 5)
         navigator.goto(SearchSettings)
 
         app.navigationBars["Search"].buttons["Edit"].tap()

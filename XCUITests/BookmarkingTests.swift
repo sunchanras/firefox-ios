@@ -9,6 +9,7 @@ let url_2 = ["url": "test-mozilla-org.html", "bookmarkLabel": "Internet for peop
 
 class BookmarkingTests: BaseTestCase {
     private func bookmark() {
+        waitForExistence(app.buttons["TabLocationView.pageOptionsButton"], timeout: 5)
         navigator.goto(PageOptionsMenu)
         waitForExistence(app.tables.cells["Bookmark This Page"])
         app.tables.cells["Bookmark This Page"].tap()
@@ -16,6 +17,7 @@ class BookmarkingTests: BaseTestCase {
     }
 
     private func unbookmark() {
+        waitForExistence(app.buttons["TabLocationView.pageOptionsButton"], timeout: 5)
         navigator.goto(PageOptionsMenu)
         waitForExistence(app.tables.cells["Remove Bookmark"])
         app.cells["Remove Bookmark"].tap()
@@ -23,6 +25,7 @@ class BookmarkingTests: BaseTestCase {
     }
 
     private func checkBookmarked() {
+        waitForExistence(app.buttons["TabLocationView.pageOptionsButton"], timeout: 5)
         navigator.goto(PageOptionsMenu)
         waitForExistence(app.tables.cells["Remove Bookmark"])
         if iPad() {
@@ -34,6 +37,7 @@ class BookmarkingTests: BaseTestCase {
     }
 
     private func checkUnbookmarked() {
+        waitForExistence(app.buttons["TabLocationView.pageOptionsButton"], timeout: 5)
         navigator.goto(PageOptionsMenu)
         waitForExistence(app.tables.cells["Bookmark This Page"])
         if iPad() {

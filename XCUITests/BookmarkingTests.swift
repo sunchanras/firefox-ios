@@ -66,6 +66,7 @@ class BookmarkingTests: BaseTestCase {
         navigator.nowAt(BrowserTab)
         waitForTabsButton()
         checkBookmarked()
+        waitForTabsButton()
 
         // Open it, then unbookmark it, and check it's no longer on bookmarks home panel
         unbookmark()
@@ -91,6 +92,7 @@ class BookmarkingTests: BaseTestCase {
         waitUntilPageLoad()
         navigator.nowAt(BrowserTab)
         waitForExistence(app.buttons["TabLocationView.pageOptionsButton"], timeout: 10)
+        waitForTabsButton()
         bookmark()
 
         //There should be a bookmark
